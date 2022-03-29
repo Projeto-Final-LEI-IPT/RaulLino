@@ -19,11 +19,44 @@
 
 // Wait for the deviceready event before using any of Cordova's device APIs.
 // See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
-//document.addEventListener('deviceready', onDeviceReady, false);
 
-//function onDeviceReady() {
+var gpsPosition, gpsSucess;
+document.addEventListener('deviceready', onDeviceReady, false);
+
+function onDeviceReady() {
     // Cordova is now initialized. Have fun!
 
-//    console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-//    document.getElementById('deviceready').classList.add('ready');
-//}
+    //console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
+    //document.getElementById('deviceready').classList.add('ready');
+    navigator.geolocation.getCurrentPosition(onGPSSuccess, onGPSError);
+}
+
+var onGPSSuccess = function(position) {
+   /* alert('Latitude: '          + position.coords.latitude          + '\n' +
+          'Longitude: '         + position.coords.longitude         + '\n' +
+          'Altitude: '          + position.coords.altitude          + '\n' +
+          'Accuracy: '          + position.coords.accuracy          + '\n' +
+          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+          'Heading: '           + position.coords.heading           + '\n' +
+          'Speed: '             + position.coords.speed             + '\n' +
+          'Timestamp: '         + position.timestamp                + '\n');*/
+    gpsSucess = true;
+    gpsPosition = position.coords; 
+
+    var map = L.map('map').setView([position.coords.latitude , position.coords.longitude ], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.marker([position.coords.latitude, position.coords.longitude ]).addTo(map)
+    .bindPopup('<strong> estou no ipt</strong>')
+    .openPopup();
+
+
+};
+
+function onGPSError(error) {
+    alert('code: '    + error.code    + '\n' +
+          'message: ' + error.message + '\n');
+    gpsSucess = false;
+}

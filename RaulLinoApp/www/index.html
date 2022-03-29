@@ -1,4 +1,11 @@
-
+<!--
+    cordova run android 
+    cordova run browser
+    cordova run android -debug
+    chrome://inspect#devices
+     
+    
+-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -21,20 +28,19 @@
             </div>
             
         </div>-->
+        <button onclick="ola();">ola</button>
         <div id="map"></div>
         <script src="cordova.js"></script>
-        <script src="js/index.js"></script>
         <script src="js/leaflet.js"></script>
+        <script src="js/index.js"></script>
+       
         <script>
 
-            var map = L.map('map').setView([51.505, -0.09], 13);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
-
-            L.marker([51.5, -0.09]).addTo(map)
-            .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-            .openPopup();
+           
+            function ola() {
+                var txt = "ola";
+                alert(txt);
+            }
         </script>
     </body>
 </html>
