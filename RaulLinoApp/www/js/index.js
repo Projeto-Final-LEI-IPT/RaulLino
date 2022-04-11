@@ -42,14 +42,24 @@ var onGPSSuccess = function(position) {
           'Timestamp: '         + position.timestamp                + '\n');*/
     gpsSucess = true;
     gpsPosition = position.coords; 
+/*
+    var mapclient = L1.mapclient('mapclient').setView([position.coords.latitude , position.coords.longitude ], 13);
+    L1.tileLayer1('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(mapclient);
 
-    var map = L.map('map').setView([position.coords.latitude , position.coords.longitude ], 13);
+     L1.marker1([position.coords.latitude , position.coords.longitude ]).addTo(mapclient)
+     .bindPopup('<strong> estou no ipt</strong>')
+     .openPopup();
+*/
+
+    var map = L.map('map').setView([39.467931, -8.201624], 13);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    L.marker([position.coords.latitude, position.coords.longitude ]).addTo(map)
-    .bindPopup('<strong> estou no ipt</strong>')
+    L.marker([39.467931, -8.201624 ]).addTo(map)
+    .bindPopup('<strong> estou em abrantes</strong>')
     .openPopup();
 
 

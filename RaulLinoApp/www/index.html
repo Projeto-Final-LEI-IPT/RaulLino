@@ -29,18 +29,34 @@
             
         </div>-->
         <button onclick="ola();">ola</button>
+        <button onclick="novapag();">novapag</button>
         <div id="map"></div>
         <script src="cordova.js"></script>
         <script src="js/leaflet.js"></script>
         <script src="js/index.js"></script>
-       
+        
+        <div id="novapag">
+            <form>
+                <input type="button" value="Voltar!" onclick="história.back()">
+                </form>
+        </div>
+
         <script>
 
+            function novapag(){
+                document.getElementById(novapag).style.display = "block";
+            }
            
             function ola() {
                 var txt = "ola";
                 alert(txt);
             }
+
+
+            
+            
+
+            
         </script>
     </body>
 </html>
