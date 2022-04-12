@@ -62,6 +62,11 @@ var onGPSSuccess = function(position) {
     .bindPopup('<strong> estou em abrantes</strong>')
     .openPopup();
 
+    L.marker([39.567931, -8.201624 ]).addTo(map)
+    .bindPopup('<strong> estou em abrantes</strong>')
+    .openPopup();
+
+
 
 };
 
