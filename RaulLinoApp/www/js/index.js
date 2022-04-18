@@ -59,11 +59,23 @@ var onGPSSuccess = function(position) {
     }).addTo(map);
 
     L.marker([39.467931, -8.201624 ]).addTo(map)
-    .bindPopup('<strong> estou em abrantes</strong>')
+    .bindPopup('<strong> estou carvalhal</strong>')
     .openPopup();
 
     L.marker([39.567931, -8.201624 ]).addTo(map)
-    .bindPopup('<strong> estou em abrantes</strong>')
+    .bindPopup('<a onclick="novapag();">novapag</a>')
+    .openPopup();
+
+    L.marker([39.567931, -8.301624 ]).addTo(map)
+    .bindPopup('<strong> estou carvalhal</strong>')
+    .openPopup();
+
+    L.marker([39.507931, -8.201624 ]).addTo(map)
+    .bindPopup('<strong> estou carvalhal</strong>')
+    .openPopup();
+
+    L.marker([39.567931, -8.251624 ]).addTo(map)
+    .bindPopup('<strong> estou carvalhal</strong>')
     .openPopup();
 
 
