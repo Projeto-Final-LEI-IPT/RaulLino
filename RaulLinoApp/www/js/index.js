@@ -58,16 +58,16 @@ var onGPSSuccess = function(position) {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    L.marker([39.467931, -8.201624 ]).addTo(map)
-    .bindPopup('<strong> estou carvalhal</strong>')
+    L.marker([39.456233, -8.189917 ]).addTo(map)
+    .bindPopup('<a onclick="avportagempaiol();">AV. Portagem/AV. Paiol</a>')
     .openPopup();
 
-    L.marker([39.567931, -8.201624 ]).addTo(map)
-    .bindPopup('<a onclick="novapag();">novapag</a>')
+    L.marker([39.461142, -8.199598]).addTo(map)
+    .bindPopup('<a onclick="rlcamoes();">Rua Luis de Camões</a>')
     .openPopup();
 
-    L.marker([39.567931, -8.301624 ]).addTo(map)
-    .bindPopup('<strong> estou carvalhal</strong>')
+    L.marker([39.452866, -8.248377 ]).addTo(map)
+    .bindPopup('<a onclick="rfnova();">Rua da Fonte Nova</a>')
     .openPopup();
 
     L.marker([39.507931, -8.201624 ]).addTo(map)

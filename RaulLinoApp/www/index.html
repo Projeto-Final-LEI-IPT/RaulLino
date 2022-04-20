@@ -31,30 +31,40 @@
         <div id ="main">    
                     <button onclick="ola();">ola</button>
         <button onclick="novapag();">novapag</button>
-        <button id="demo" onclick="myFunction()">Click me!</button>
+        
         <div id="map"></div>
-        <script src="cordova.js"></script>
-        <script src="js/leaflet.js"></script>
-        <script src="js/index.js"></script>
-        
-        <div class="myFunction">
-            <h2>This is a heading in a div element</h2>
-            <p>This is some text in a div element.</p>
-          </div>
-        
+            <script src="cordova.js"></script>
+            <script src="js/leaflet.js"></script>
+            <script src="js/index.js"></script>
+           
         </div>
         
         <div id="pagina1" >
             <button onclick="back();">novapag</button>
         </div>
+
+        <div id="rlcamoes" >
+            <button onclick="back();">Return</button>
+
+        </div>
+
+        <div id="avportagempaiol" >
+            <button onclick="back();">Return</button>
+            
+        </div>
+
+        <div id="rfnova" >
+            <button onclick="back();">Return</button>
+            
+        </div>
+
+
         <script>
 
 document.getElementById("pagina1").style.display = "none"; 
-
-        function myFunction() {
-         document.getElementById("demo").innerHTML = "Hello Dear Visitor!</br> We are happy that you've chosen our website to learn programming languages. We're sure you'll become one of the best programmers in your country. Good luck to you!";
-         }
-             
+document.getElementById("rlcamoes").style.display = "none"; 
+document.getElementById("rfnova").style.display = "none";
+document.getElementById("avportagempaiol").style.display = "none";
            
             function ola() {
                 var txt = "ola";
@@ -70,7 +80,20 @@ document.getElementById("pagina1").style.display = "none";
                 document.getElementById("main").style.display = "block";
                 document.getElementById("pagina1").style.display = "none";
                    }
-
+            
+                   function rlcamoes() {
+                document.getElementById("main").style.display = "none";
+                document.getElementById("rlcamoes").style.display = "block";
+                   }
+                   
+                   function avportagempaiol() {
+                document.getElementById("main").style.display = "none";
+                document.getElementById("avportagempaiol").style.display = "block";
+                   }
+                   function rfnova() {
+                document.getElementById("main").style.display = "none";
+                document.getElementById("rfnova").style.display = "block";
+                   }
             
         </script>
     </body>
