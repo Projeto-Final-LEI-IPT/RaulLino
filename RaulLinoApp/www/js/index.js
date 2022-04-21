@@ -42,8 +42,8 @@ var onGPSSuccess = function(position) {
           'Timestamp: '         + position.timestamp                + '\n');*/
     gpsSucess = true;
     gpsPosition = position.coords; 
-/*
-    var mapclient = L1.mapclient('mapclient').setView([position.coords.latitude , position.coords.longitude ], 13);
+
+   /* var mapclient = L1.mapclient('mapclient').setView([position.coords.latitude , position.coords.longitude ], 13);
     L1.tileLayer1('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(mapclient);
@@ -51,12 +51,18 @@ var onGPSSuccess = function(position) {
      L1.marker1([position.coords.latitude , position.coords.longitude ]).addTo(mapclient)
      .bindPopup('<strong> estou no ipt</strong>')
      .openPopup();
+
 */
+    alert(GPSDistance(position.coords.latitude, position.coords.longitude, 39.467931, -8.201624));
 
     var map = L.map('map').setView([39.467931, -8.201624], 13);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
+
+    L.marker([position.coords.latitude , position.coords.longitude ]).addTo(map)
+    .bindPopup('<strong> GPS</strong>')
+    .openPopup();
 
     L.marker([39.456233, -8.189917 ]).addTo(map)
     .bindPopup('<a onclick="avportagempaiol();">AV. Portagem/AV. Paiol</a>')
@@ -86,4 +92,22 @@ function onGPSError(error) {
     alert('code: '    + error.code    + '\n' +
           'message: ' + error.message + '\n');
     gpsSucess = false;
+}
+
+function GPSDistance(lat1, lon1, lat2, lon2) {
+    const R = 6371e3; // metres
+    const teta1 = lat1 * Math.PI/180; // φ, λ in radians
+    const teta2 = lat2 * Math.PI/180;
+    const deltat = (lat2-lat1) * Math.PI/180;
+    const deltae = (lon2-lon1) * Math.PI/180;
+    
+    const a = Math.sin(deltat/2) * Math.sin(deltat/2) +
+              Math.cos(teta1) * Math.cos(teta2) *
+              Math.sin(deltae/2) * Math.sin(deltae/2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    
+    const d = R * c; // in metres
+
+    return d;
+
 }
