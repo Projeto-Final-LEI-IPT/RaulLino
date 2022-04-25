@@ -56,6 +56,41 @@
         <div id="rfnova" >
             <button onclick="back();">Return</button>
             
+                <!-- <HEAD>
+
+                    <TITLE>Seu título aqui</TITLE>
+                    
+                    </HEAD>  
+                    
+                    <BODY BGCOLOR="FFFFFF">
+                    
+                    <CENTER><IMG SRC="/RaulLinoApp/info para o roteiro/3_LPB_Rua da Fonte Nova_Tramagal/imagem-20220203-114627-56302b87.jpeg" ALIGN="BOTTOM"><IMG SRC="/RaulLinoApp/info para o roteiro/3_LPB_Rua da Fonte Nova_Tramagal/imagem-20220203-114837-304acfff.jpeg" ALIGN="BOTTOM"> </CENTER>
+                    
+                    <HR>
+                    
+                    <a href="http://umsitemuitobom.com.br">Nome do Link</a>
+                    
+                    é o link para outro site atraente.
+                    
+                    <H1>Este é um cabeçalho</H1>
+                    
+                    <H2>Este é um cabeçalho médio</H2>
+                    
+                    <P> ANO DO PROJETO: 1923	
+                    <P>LOCALIZAÇÃO: Tramagal/Rua da Fonte Nova, nº 146
+                    <P>TIPOLOGIA: Habitação Unifamiliar
+                    <P>Em 1923, foi solicitado a Raul Lino a ampliação e alteração de uma habitação térrea na vila do Tramagal, com a adição de um piso e de sótão. No edifício pré-existente também foi reformulada a compartimentação original, bem como se acrescentou um alpendre que ladeia um dos flancos da habitação. No entanto, é provável que o edifício não tenha sido realizado de acordo com o projeto proposto por Raul Lino. 
+                    
+                    <P> Isto é um novo parágrafo!
+                    
+                    <P> <B>Este é um parágrafo novo!</B>
+                    
+                    <BR> <B><I>Esta é uma nova sentença sem quebra de parágrafo, em negrito e itálico.</I></B>  
+                    
+                    <HR>
+                    
+                    </BODY>   -->
+
         </div>
 
 
@@ -73,26 +108,38 @@ document.getElementById("avportagempaiol").style.display = "none";
 
             function novapag() {
                 document.getElementById("main").style.display = "none";
+                document.getElementById("rfnova").style.display = "none";
+                document.getElementById("avportagempaiol").style.display = "none";
+                document.getElementById("rlcamoes").style.display = "none";
                 document.getElementById("pagina1").style.display = "block";
                    }
             
-                   function back() {
+            function back() {
                 document.getElementById("main").style.display = "block";
+                document.getElementById("rfnova").style.display = "none";
+                document.getElementById("avportagempaiol").style.display = "none";
                 document.getElementById("pagina1").style.display = "none";
+                document.getElementById("rlcamoes").style.display = "none";
                    }
             
-                   function rlcamoes() {
+             function rlcamoes() {
                 document.getElementById("main").style.display = "none";
+                document.getElementById("rfnova").style.display = "none";
+                document.getElementById("avportagempaiol").style.display = "none";
                 document.getElementById("rlcamoes").style.display = "block";
                    }
                    
-                   function avportagempaiol() {
+            function avportagempaiol() {
                 document.getElementById("main").style.display = "none";
+                document.getElementById("rfnova").style.display = "none";
+                document.getElementById("rlcamoes").style.display = "none";
                 document.getElementById("avportagempaiol").style.display = "block";
                    }
-                   function rfnova() {
+            function rfnova() {
                 document.getElementById("main").style.display = "none";
                 document.getElementById("rfnova").style.display = "block";
+                document.getElementById("rlcamoes").style.display = "none";
+                document.getElementById("avportagempaiol").style.display = "none";
                    }
             
         </script>

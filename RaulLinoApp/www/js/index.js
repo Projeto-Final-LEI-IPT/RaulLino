@@ -54,7 +54,25 @@ var onGPSSuccess = function(position) {
 
 */
     alert(GPSDistance(position.coords.latitude, position.coords.longitude, 39.467931, -8.201624));
+  /*  
+    function gps(){
+        if (GPSDistance >= 3000) {
+            var map = L.map('map').setView([39.467931, -8.201624], 13);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            
+        } else {
+            var map = L.map('map').setView([position.coords.latitude , position.coords.longitude ], 13);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+        
+        }
+       
 
+    }
+*/
     var map = L.map('map').setView([39.467931, -8.201624], 13);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
