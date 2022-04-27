@@ -94,8 +94,32 @@ var onGPSSuccess = function(position) {
     .bindPopup('<a onclick="rfnova();">Rua da Fonte Nova</a>')
     .openPopup();
 
+    L.marker([39.461466, -8.198790 ]).addTo(map)
+    .bindPopup('<a onclick="lgamrma();">Largo General Avelar Machado e Rua Montepio Abrantino</a>')
+    .openPopup();
+
+    L.marker([39.462793, -8.196086 ]).addTo(map)
+    .bindPopup('<a onclick="rsp();">Rua de S. Pedro, nº 8</a>')
+    .openPopup();
+
+    L.marker([39.463610, -8.201411 ]).addTo(map)
+    .bindPopup('<a onclick="rdah();">Rua D. Afonso Henriques, nº 25</a>')
+    .openPopup();
+
+    L.marker([39.461228, -8.198713 ]).addTo(map)
+    .bindPopup('<a onclick="lgam();">Largo General Avelar Machado</a>')
+    .openPopup();
+
+    L.marker([39.461644, -8.197661 ]).addTo(map)
+    .bindPopup('<a onclick="rtv();">Rua Tenente Valadim, nº 3 e 5</a>')
+    .openPopup();
+
     L.marker([39.507931, -8.201624 ]).addTo(map)
-    .bindPopup('<strong> estou carvalhal</strong>')
+    .bindPopup('<a onclick="9();"></a>')
+    .openPopup();
+
+    L.marker([39.507931, -8.201624 ]).addTo(map)
+    .bindPopup('<a onclick="10();"></a>')
     .openPopup();
 
     L.marker([39.567931, -8.251624 ]).addTo(map)
