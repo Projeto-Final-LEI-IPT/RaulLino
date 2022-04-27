@@ -114,13 +114,19 @@ var onGPSSuccess = function(position) {
     .bindPopup('<a onclick="rtv();">Rua Tenente Valadim, nº 3 e 5</a>')
     .openPopup();
 
-    L.marker([39.507931, -8.201624 ]).addTo(map)
-    .bindPopup('<a onclick="9();"></a>')
+    L.marker([39.462735, -8.196801 ]).addTo(map)
+    .bindPopup('<a onclick="ra();">Rua do Arcediago, nº 19</a>')
     .openPopup();
 
-    L.marker([39.507931, -8.201624 ]).addTo(map)
-    .bindPopup('<a onclick="10();"></a>')
+    L.marker([39.463106, -8.197944 ]).addTo(map)
+    .bindPopup('<a onclick="rgmam();">Rua General Manuel António Mourato, nº 11 </a>')
     .openPopup();
+
+    L.marker([39.463001, -8.198164 ]).addTo(map)
+    .bindPopup('<a onclick="rje();">Rua José Estevão, nº 20 </a>')
+    .openPopup();
+
+    
 
     L.marker([39.567931, -8.251624 ]).addTo(map)
     .bindPopup('<strong> estou carvalhal</strong>')
