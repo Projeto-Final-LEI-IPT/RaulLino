@@ -73,7 +73,7 @@ var onGPSSuccess = function(position) {
 
     }
 */
-    var map = L.map('map').setView([39.467931, -8.201624], 13);
+    var map = L.map('map').setView([39.462905, -8.197913], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
@@ -126,12 +126,34 @@ var onGPSSuccess = function(position) {
     .bindPopup('<a onclick="rje();">Rua José Estevão, nº 20 </a>')
     .openPopup();
 
-    
-
-    L.marker([39.567931, -8.251624 ]).addTo(map)
-    .bindPopup('<strong> estou carvalhal</strong>')
+    L.marker([39.461810, -8.197334 ]).addTo(map)
+    .bindPopup('<a onclick="rsi();">Rua de Santa Isabel nº 28 e 30 </a>')
     .openPopup();
 
+    L.marker([39.469188, -8.188591 ]).addTo(map)
+    .bindPopup('<a onclick="rpt();">Alferrarede, Rua do Porto Taínho, nº 24 </a>')
+    .openPopup();
+
+    L.marker([39.463790, -8.200921 ]).addTo(map)
+    .bindPopup('<a onclick="rah();">Rua Afonso Henriques nº 9 a 11 </a>')
+    .openPopup();
+
+    L.marker([39.463567, -8.201586 ]).addTo(map)
+    .bindPopup('<a onclick="ah();">Afonso Henriques (ao lado do nº 25)</a>')
+    .openPopup();
+
+    L.marker([39.463702, -8.201182 ]).addTo(map)
+    .bindPopup('<a onclick="rah2();">Rua Afonso Henriques nº 13 a 15</a>')
+    .openPopup();
+
+    L.marker([39.464757, -8.197524 ]).addTo(map)
+    .bindPopup('<a onclick="r5o();">Rua 5 de outubro de 1910, nº 16 </a>')
+    .openPopup();
+
+    L.marker([39.417387, -8.210650 ]).addTo(map)
+    .bindPopup('<a onclick="csmrt();">Cemitério de S. Miguel do Rio Torto, Carvalhal </a>')
+    .openPopup();
+    
 
 
 };
