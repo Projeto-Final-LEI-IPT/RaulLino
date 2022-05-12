@@ -802,7 +802,33 @@ document.getElementById("avportagempaiol").style.display = "none";
                 document.getElementById("csmrt").style.display = "none";
                    }
             
-var divs=["main","rfnova","avportagempaiol","rlcamoes","lgamrma","rsp","rdah","lgam","rtv","ra","rgmam","rje","rsi","rpt","rah","ah","rah2","r5o","csmrt"];
+    var divs=["main","rfnova","avportagempaiol","rlcamoes","lgamrma","rsp","rdah","lgam","rtv","ra","rgmam","rje","rsi","rpt","rah","ah","rah2","r5o","csmrt"];
+
+    function showDiv(div)
+    {
+        for(const d of divs)
+            document.getElementById(d).style.display = "none";
+            document.getElementById(div).style.display = "block";
+    }
+
+    showDiv(rlcamoes);
+    showDiv(avportagempaiol);
+    showDiv(rfnova);
+    showDiv(lgamrma);
+    showDiv(rsp);
+    showDiv(rdah);
+    showDiv(lgam);
+    showDiv(rtv);
+    showDiv(ra);
+    showDiv(rgmam);
+    showDiv(rje);
+    showDiv(rsi);
+    showDiv(rpt);
+    showDiv(rah);
+    showDiv(ah);
+    showDiv(rah2);
+    showDiv(r5o);
+    showDiv(csmrt);
 
 function showDiv(div)
  {
