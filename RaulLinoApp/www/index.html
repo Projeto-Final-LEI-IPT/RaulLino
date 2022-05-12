@@ -802,6 +802,14 @@ document.getElementById("avportagempaiol").style.display = "none";
                 document.getElementById("csmrt").style.display = "none";
                    }
             
+var divs=["main","rfnova","avportagempaiol","rlcamoes","lgamrma","rsp","rdah","lgam","rtv","ra","rgmam","rje","rsi","rpt","rah","ah","rah2","r5o","csmrt"];
+
+function showDiv(div)
+ {
+    for(const d of divs)
+        document.getElementById(d).style.display = "none";
+    document.getElementById(div).style.display = "block";
+ }
              function rlcamoes() {
                 document.getElementById("main").style.display = "none";
                 document.getElementById("rfnova").style.display = "none";
