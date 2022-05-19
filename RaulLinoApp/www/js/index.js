@@ -114,24 +114,16 @@ var onGPSSuccess = function(position) {
     .bindPopup('<a onclick="rtv();">Rua Tenente Valadim, nº 3 e 5</a>')
     .openPopup();
 
-<<<<<<< Updated upstream
-    L.marker([39.462735, -8.196801 ]).addTo(map)
-=======
     L.marker([39.462735, -8.196801]).addTo(map)
->>>>>>> Stashed changes
     .bindPopup('<a onclick="ra();">Rua do Arcediago, nº 19</a>')
     .openPopup();
 
     L.marker([39.463106, -8.197944 ]).addTo(map)
-<<<<<<< Updated upstream
-    .bindPopup('<a onclick="rgmam();">Rua General Manuel António Mourato, nº 11 </a>')
-=======
     .bindPopup('<a onclick="rgmam();">Rua General Manuel António Mourato, nº 11</a>')
     .openPopup();
 
     L.marker([39.463001, -8.198164 ]).addTo(map)
     .bindPopup('<a onclick="rje();">Rua José Estevão, nº 20</a>')
->>>>>>> Stashed changes
     .openPopup();
 
     L.marker([39.463001, -8.198164 ]).addTo(map)
