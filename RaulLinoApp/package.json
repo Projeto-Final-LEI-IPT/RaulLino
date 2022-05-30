@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "aframe-osm-3d": "^0.5.2",
-    "cordova": "^11.0.0"
+    "cordova": "^11.0.0",
+    "gradle": "^1.2.4"
   }
 }
