@@ -73,7 +73,24 @@ var onGPSSuccess = function(position) {
 
     }
 */
-    var map = L.map('map').setView([39.462905, -8.197913], 14);
+
+    abrantes_f = () => {
+        if(navigator.geolocation){
+            let geo = navigator.geolocation.getCurrentPosition();
+            let abrantes = [39.462905, -8.197913];
+            var dist = math.sqrt(math.pow((geo.coords.latitude - abrantes[0]),2)+math.pow((geo.coords.longitude - abrantes[1]),2));
+            if(dist * 60 > 20){
+                return [geo.coords.latitude, geo.coords.longitude];
+            }
+            else{
+                return abrantes;
+            }
+        }
+        else{
+            return [39.462905, -8.197913];
+        }
+    }
+    var map = L.map('map').setView(abrantes_f(), 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
