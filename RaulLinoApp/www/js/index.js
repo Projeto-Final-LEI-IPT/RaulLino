@@ -21,6 +21,11 @@
 // See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
 
 var gpsPosition, gpsSucess;
+var abrantesLat = 39.46332002046439;
+var abrantesLong = -8.199677027352164;
+
+
+
 document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
@@ -53,128 +58,91 @@ var onGPSSuccess = function(position) {
      .openPopup();
 
 */
-    alert(GPSDistance(position.coords.latitude, position.coords.longitude, 39.467931, -8.201624));
-  /*  
-    function gps(){
-        if (GPSDistance >= 3000) {
-            var map = L.map('map').setView([39.467931, -8.201624], 13);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
-            
-        } else {
-            var map = L.map('map').setView([position.coords.latitude , position.coords.longitude ], 13);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
-        
-        }
-       
 
-    }
-*/
+    distancia = GPSDistance(position.coords.latitude, position.coords.longitude, abrantesLat, abrantesLong); 
+    var map;
 
-    abrantes_f = () => {
-        if(navigator.geolocation){
-            let geo = navigator.geolocation.getCurrentPosition();
-            let abrantes = [39.462905, -8.197913];
-            var dist = math.sqrt(math.pow((geo.coords.latitude - abrantes[0]),2)+math.pow((geo.coords.longitude - abrantes[1]),2));
-            if(dist * 60 > 20){
-                return [geo.coords.latitude, geo.coords.longitude];
-            }
-            else{
-                return abrantes;
-            }
-        }
-        else{
-            return [39.462905, -8.197913];
-        }
+    if (distancia < 5000) {
+        alert("estou em abrantes");
+        map = L.map('map').setView([position.coords.latitude,  position.coords.longitude], 14);
+        L.marker([position.coords.latitude , position.coords.longitude ]).addTo(map)
+        .bindPopup('<strong> GPS</strong>')
+        .openPopup();
+    } else {
+        alert("não estou em abrantes");
+        map = L.map('map').setView([abrantesLat, abrantesLong], 14);
+        L.marker([abrantesLat , abrantesLong ]).addTo(map)
+        .bindPopup('<strong> Centro Abrantes</strong>')
+        .openPopup();
     }
-    var map = L.map('map').setView(abrantes_f(), 14);
+ 
+
+ 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    L.marker([position.coords.latitude , position.coords.longitude ]).addTo(map)
-    .bindPopup('<strong> GPS</strong>')
-    .openPopup();
+   
 
     L.marker([39.456233, -8.189917 ]).addTo(map)
-    .bindPopup('<a onclick="avportagempaiol();">AV. Portagem/AV. Paiol</a>')
-    .openPopup();
+    .bindPopup('<a onclick="avportagempaiol();">AV. Portagem/AV. Paiol</a>');
 
     L.marker([39.461142, -8.199598]).addTo(map)
-    .bindPopup('<a onclick="rlcamoes();">Rua Luis de Camões</a>')
-    .openPopup();
+    .bindPopup('<a onclick="rlcamoes();">Rua Luis de Camões</a>');
 
     L.marker([39.452866, -8.248377 ]).addTo(map)
-    .bindPopup('<a onclick="rfnova();">Rua da Fonte Nova</a>')
-    .openPopup();
+    .bindPopup('<a onclick="rfnova();">Rua da Fonte Nova</a>');
 
     L.marker([39.461466, -8.198790 ]).addTo(map)
-    .bindPopup('<a onclick="lgamrma();">Largo General Avelar Machado e Rua Montepio Abrantino</a>')
-    .openPopup();
+    .bindPopup('<a onclick="lgamrma();">Largo General Avelar Machado e Rua Montepio Abrantino</a>');
 
     L.marker([39.462793, -8.196086 ]).addTo(map)
-    .bindPopup('<a onclick="rsp();">Rua de S. Pedro, nº 8</a>')
-    .openPopup();
+    .bindPopup('<a onclick="rsp();">Rua de S. Pedro, nº 8</a>');
 
     L.marker([39.463610, -8.201411 ]).addTo(map)
-    .bindPopup('<a onclick="rdah();">Rua D. Afonso Henriques, nº 25</a>')
-    .openPopup();
+    .bindPopup('<a onclick="rdah();">Rua D. Afonso Henriques, nº 25</a>');
 
     L.marker([39.461228, -8.198713 ]).addTo(map)
-    .bindPopup('<a onclick="lgam();">Largo General Avelar Machado</a>')
-    .openPopup();
+    .bindPopup('<a onclick="lgam();">Largo General Avelar Machado</a>');
 
     L.marker([39.461644, -8.197661 ]).addTo(map)
-    .bindPopup('<a onclick="rtv();">Rua Tenente Valadim, nº 3 e 5</a>')
-    .openPopup();
+    .bindPopup('<a onclick="rtv();">Rua Tenente Valadim, nº 3 e 5</a>');
 
     L.marker([39.462735, -8.196801]).addTo(map)
-    .bindPopup('<a onclick="ra();">Rua do Arcediago, nº 19</a>')
-    .openPopup();
+    .bindPopup('<a onclick="ra();">Rua do Arcediago, nº 19</a>');
 
     L.marker([39.463106, -8.197944 ]).addTo(map)
-    .bindPopup('<a onclick="rgmam();">Rua General Manuel António Mourato, nº 11</a>')
-    .openPopup();
+    .bindPopup('<a onclick="rgmam();">Rua General Manuel António Mourato, nº 11</a>');
 
     L.marker([39.463001, -8.198164 ]).addTo(map)
-    .bindPopup('<a onclick="rje();">Rua José Estevão, nº 20</a>')
-    .openPopup();
+    .bindPopup('<a onclick="rje();">Rua José Estevão, nº 20</a>');
 
     L.marker([39.463001, -8.198164 ]).addTo(map)
-    .bindPopup('<a onclick="rje();">Rua José Estevão, nº 20 </a>')
-    .openPopup();
+    .bindPopup('<a onclick="rje();">Rua José Estevão, nº 20 </a>');
 
     L.marker([39.461810, -8.197334 ]).addTo(map)
-    .bindPopup('<a onclick="rsi();">Rua de Santa Isabel nº 28 e 30 </a>')
-    .openPopup();
+    .bindPopup('<a onclick="rsi();">Rua de Santa Isabel nº 28 e 30 </a>');
 
     L.marker([39.469188, -8.188591 ]).addTo(map)
-    .bindPopup('<a onclick="rpt();">Alferrarede, Rua do Porto Taínho, nº 24 </a>')
-    .openPopup();
+    .bindPopup('<a onclick="rpt();">Alferrarede, Rua do Porto Taínho, nº 24 </a>');
 
     L.marker([39.463790, -8.200921 ]).addTo(map)
-    .bindPopup('<a onclick="rah();">Rua Afonso Henriques nº 9 a 11 </a>')
-    .openPopup();
+    .bindPopup('<a onclick="rah();">Rua Afonso Henriques nº 9 a 11 </a>');
 
     L.marker([39.463567, -8.201586 ]).addTo(map)
-    .bindPopup('<a onclick="ah();">Afonso Henriques (ao lado do nº 25)</a>')
-    .openPopup();
+    .bindPopup('<a onclick="ah();">Afonso Henriques (ao lado do nº 25)</a>');
 
     L.marker([39.463702, -8.201182 ]).addTo(map)
-    .bindPopup('<a onclick="rah2();">Rua Afonso Henriques nº 13 a 15</a>')
-    .openPopup();
+    .bindPopup('<a onclick="rah2();">Rua Afonso Henriques nº 13 a 15</a>');
 
     L.marker([39.464757, -8.197524 ]).addTo(map)
-    .bindPopup('<a onclick="r5o();">Rua 5 de outubro de 1910, nº 16 </a>')
-    .openPopup();
+    .bindPopup('<a onclick="r5o();">Rua 5 de outubro de 1910, nº 16 </a>');
 
     L.marker([39.417387, -8.210650 ]).addTo(map)
-    .bindPopup('<a onclick="csmrt();">Cemitério de S. Miguel do Rio Torto, Carvalhal </a>')
-    .openPopup();
+    .bindPopup('<a onclick="csmrt();">Cemitério de S. Miguel do Rio Torto, Carvalhal </a>');
     
+    // centra o map
+    map.setView(new L.LatLng([abrantesLat, abrantesLong]), 5);
 
 
 };
