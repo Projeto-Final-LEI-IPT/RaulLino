@@ -34,6 +34,14 @@ function onDeviceReady() {
     //console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     //document.getElementById('deviceready').classList.add('ready');
     navigator.geolocation.getCurrentPosition(onGPSSuccess, onGPSError);
+    document.addEventListener("backbutton", onBackKeyDown, false);
+}
+
+function onLoad() {
+    document.addEventListener("deviceready", onDeviceReady, false);
+}
+
+function onBackKeyDown() {
 }
 
 var onGPSSuccess = function(position) {
@@ -76,7 +84,11 @@ var onGPSSuccess = function(position) {
         .openPopup();
     }
  
+    document.addEventListener("backbutton", onBackKeyDown, false);
 
+    function onBackKeyDown() {
+    // Handle the back button
+    }
  
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
