@@ -135,7 +135,7 @@ function GPSDistance(lat1, lon1, lat2, lon2) {
 
 }
 
-function carrega_pagina(id) {
+carrega_pagina = (id) => {
 
     fetch("dados.json")
         .then(response => response.json())
@@ -170,11 +170,74 @@ function carrega_pagina(id) {
         });
 
 
-    document.getElementById("map").style.display = "none";
-    document.getElementById("pagina").style.display = "block";
+    mudar_pagina("pagina");
 }
 
-function descarrega_pagina() {
-    document.getElementById("map").style.display = "block";
-    document.getElementById("pagina").style.display = "none";
+
+ins_cart = (num_column) => {
+    fetch("dados.json")
+        .then(response => response.json())
+        .then(json => {
+            let str_ins = '<div class="card-group">';
+            let i = 0;
+            json.dados.forEach(element => {
+                let str_card =
+                    '<div class="card">' +
+                    '<center><img style="width:400px; height:200px;" src="' + element.imagens[0] + '" class="card-img-top" alt="' + element.imagens[0] + '"/></center>' +
+                    '<div class="card-body">' +
+                    '<h5 class="card-title">' + element.titulo + '</h5>' +
+                    '<p class="card-text">' + element.info.substring(0, 250) + '</p>' +
+                    '<p class="card-text"><small class="text-muted">' + element.ano + '</small></p>' +
+                    '</div>' +
+                    '</div>';
+                if (i % num_column == 0) {
+                    str_ins += '</div>'
+                    str_ins += '<div class="card-group">';
+                }
+                i++;
+                str_ins += str_card;
+            });
+            str_ins += '</div>'
+            document.getElementById("fotos").innerHTML = str_ins;
+        });
+}
+
+mudar_pagina = (pagina) => {
+    console.log(pagina);
+    if (pagina == "home") {
+        document.getElementById("home").style.display = "block";
+        document.getElementById("map").style.display = "none";
+        document.getElementById("raullino").style.display = "none";
+        document.getElementById("pagina").style.display = "none";
+        document.getElementById("fotos").style.display = "none";
+    }
+    else if (pagina == "map") {
+        document.getElementById("home").style.display = "none";
+        document.getElementById("map").style.display = "block";
+        document.getElementById("raullino").style.display = "none";
+        document.getElementById("pagina").style.display = "none";
+        document.getElementById("fotos").style.display = "none";
+    }
+    else if (pagina == "raullino") {
+        document.getElementById("home").style.display = "none";
+        document.getElementById("map").style.display = "none";
+        document.getElementById("raullino").style.display = "block";
+        document.getElementById("pagina").style.display = "none";
+        document.getElementById("fotos").style.display = "none";
+    }
+    else if (pagina == "pagina") {
+        document.getElementById("home").style.display = "none";
+        document.getElementById("map").style.display = "none";
+        document.getElementById("raullino").style.display = "none";
+        document.getElementById("pagina").style.display = "block";
+        document.getElementById("fotos").style.display = "none";
+    }
+    else if (pagina == "fotos") {
+        document.getElementById("home").style.display = "none";
+        document.getElementById("map").style.display = "none";
+        document.getElementById("raullino").style.display = "none";
+        document.getElementById("pagina").style.display = "none";
+        document.getElementById("fotos").style.display = "block";
+        ins_cart(3)
+    }
 }
