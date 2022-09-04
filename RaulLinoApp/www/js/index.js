@@ -23,6 +23,7 @@
 var gpsPosition, gpsSucess;
 var abrantesLat = 39.46332002046439;
 var abrantesLong = -8.199677027352164;
+var map;
 
 
 
@@ -68,7 +69,7 @@ var onGPSSuccess = function (position) {
  */
 
     distancia = GPSDistance(position.coords.latitude, position.coords.longitude, abrantesLat, abrantesLong);
-    var map;
+
 
     if (distancia < 5000) {
         map = L.map('map').setView([position.coords.latitude, position.coords.longitude], 14);
@@ -99,7 +100,7 @@ var onGPSSuccess = function (position) {
             var i = 0;
             json.dados.forEach(element => {
                 L.marker([element.coordenadas[0], element.coordenadas[1]]).addTo(map)
-                    .bindPopup('<a onclick="carrega_pagina(' + i + ');">' + element.titulo + '</a>');
+                    .bindPopup('<a style="cursor:pointer;" onclick="carrega_pagina(' + i + ');">' + element.titulo + '</a>');
                 i++;
             });
         });
@@ -108,7 +109,7 @@ var onGPSSuccess = function (position) {
     // centra o map
     map.setView(new L.LatLng([abrantesLat, abrantesLong]), 5);
 
-
+    mudar_pagina('map');
 };
 
 function onGPSError(error) {
@@ -182,8 +183,8 @@ ins_cart = (num_column) => {
             let i = 0;
             json.dados.forEach(element => {
                 let str_card =
-                    '<div class="card">' +
-                    '<center><img style="width:400px; height:200px;" src="' + element.imagens[0] + '" class="card-img-top" alt="' + element.imagens[0] + '"/></center>' +
+                    '<div class="card" style="cursor:pointer;" onclick="carrega_pagina(' + i + ');">' +
+                    '<center><img style="width:100%; height:278px;" src="' + element.imagens[0] + '" class="card-img-top" alt="' + element.imagens[0] + '"/></center>' +
                     '<div class="card-body">' +
                     '<h5 class="card-title">' + element.titulo + '</h5>' +
                     '<p class="card-text">' + element.info.substring(0, 250) + '</p>' +
@@ -203,10 +204,10 @@ ins_cart = (num_column) => {
 }
 
 mudar_pagina = (pagina) => {
-    console.log(pagina);
     if (pagina == "home") {
         document.getElementById("home").style.display = "block";
-        document.getElementById("map").style.display = "none";
+        document.getElementById("map").style.opacity = 0;
+        document.getElementById("map").style.transform = "translate(0%, -200%)";
         document.getElementById("raullino").style.display = "none";
         document.getElementById("pagina").style.display = "none";
         document.getElementById("fotos").style.display = "none";
@@ -214,6 +215,8 @@ mudar_pagina = (pagina) => {
     else if (pagina == "map") {
         document.getElementById("home").style.display = "none";
         document.getElementById("map").style.display = "block";
+        document.getElementById("map").style.opacity = 1;
+        document.getElementById("map").style.transform = "translate(0%, 0%)";
         document.getElementById("raullino").style.display = "none";
         document.getElementById("pagina").style.display = "none";
         document.getElementById("fotos").style.display = "none";

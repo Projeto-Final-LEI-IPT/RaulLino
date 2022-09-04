@@ -124,6 +124,8 @@ body {
 #map {
     height: 100%;
     width: 100%;
+    transform: translate(0%, -200%);
+    position: absolute;
 }
 
 .carousel-control-prev-icon {

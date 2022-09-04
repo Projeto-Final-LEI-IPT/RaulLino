@@ -21,19 +21,21 @@
     <div id="navbar">
         <ul class="nav justify-content-center">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" onclick="mudar_pagina('home')">Home</a>
+                <a style="cursor:pointer;" class="nav-link active" aria-current="page"
+                    onclick="mudar_pagina('home')">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" onclick="mudar_pagina('map')">Mapa</a>
+                <a style="cursor:pointer;" class="nav-link" onclick="mudar_pagina('map')">Mapa</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" onclick="mudar_pagina('raullino')">RaulLino</a>
+                <a style="cursor:pointer;" class="nav-link" onclick="mudar_pagina('raullino')">RaulLino</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" onclick="mudar_pagina('fotos')">Fotos</a>
+                <a style="cursor:pointer;" class="nav-link" onclick="mudar_pagina('fotos')">Fotos</a>
             </li>
         </ul>
     </div>
+    <div id="map"></div>
     <div id="home">
         <div>
             <img style="width:100%;" src="www\abrantes.jpg" class="img-fluid" />
@@ -41,14 +43,12 @@
                 <h1 class="display-1">Raul Lino da Silva</h1>
                 <h1 class="display-6">Conservador e revolucionário, ousado e tradicionalista, mas acima de tudo um dos
                     mais geniais arquitetos portugueses</h1>
-                <!--<button type="button" class="btn btn-outline-dark btn-lg">Vem
-                    conhecer</button>-->
-                <center><button style="text-align: center;" type="button" class="btn btn-dark btn-lg">Vem
-                        conhecer</button></center>
+                <center><button style="text-align: center; margin-right: 4%;" type="button" class="btn btn-dark btn-lg"
+                        onclick="mudar_pagina('map')">Vem conhecer</button></center>
             </div>
         </div>
     </div>
-    <div id="map"></div>
+
     <div id="raullino">
         <center><img style="width:50%; height:50%;margin-top:1%;" src="info_para_o_roteiro/raul-lino.jpg"
                 class="img-fluid" /></center>
