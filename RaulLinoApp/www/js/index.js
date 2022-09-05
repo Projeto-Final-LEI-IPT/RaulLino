@@ -211,6 +211,7 @@ mudar_pagina = (pagina) => {
         document.getElementById("raullino").style.display = "none";
         document.getElementById("pagina").style.display = "none";
         document.getElementById("fotos").style.display = "none";
+        ver_window();
     }
     else if (pagina == "map") {
         document.getElementById("home").style.display = "none";
@@ -244,3 +245,12 @@ mudar_pagina = (pagina) => {
         ins_cart(3)
     }
 }
+
+ver_window = () => {
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    if (w >= h) document.getElementById("imagem_fundo").innerHTML = '<img style="width:' + w + 'px;height:' + h + 'px;" src="www\\abrantes.jpg" class="img-fluid" />';
+    else document.getElementById("imagem_fundo").innerHTML = '<img style="width:' + w + 'px;height:' + h + 'px;"src="www\\abrantes2.png" class="img-fluid" />';
+}
+
+window.addEventListener('resize', ver_window);
