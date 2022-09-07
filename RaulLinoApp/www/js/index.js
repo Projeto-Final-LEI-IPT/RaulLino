@@ -249,8 +249,8 @@ mudar_pagina = (pagina) => {
 ver_window = () => {
     var w = window.innerWidth;
     var h = window.innerHeight;
-    if (w >= h) document.getElementById("imagem_fundo").innerHTML = '<img style="width:' + w + 'px;height:' + h + 'px;" src="www\\abrantes.jpg" class="img-fluid" />';
-    else document.getElementById("imagem_fundo").innerHTML = '<img style="width:' + w + 'px;height:' + h + 'px;"src="www\\abrantes2.png" class="img-fluid" />';
+    if (w >= h) document.getElementById("imagem_fundo").innerHTML = '<img style="width:' + w + 'px;height:' + h + 'px;" src="img/abrantes.jpg" class="img-fluid" />';
+    else document.getElementById("imagem_fundo").innerHTML = '<img style="width:' + w + 'px;height:' + h + 'px;"src="img/abrantes2.png" class="img-fluid" />';
 }
 
 window.addEventListener('resize', ver_window);
