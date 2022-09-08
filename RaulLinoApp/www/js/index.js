@@ -188,7 +188,7 @@ ins_cart = (num_column) => {
                     '<center><img style="width:100%; height:278px;" src="' + element.imagens[0] + '" class="card-img-top" alt="' + element.imagens[0] + '"/></center>' +
                     '<div class="card-body">' +
                     '<h5 class="card-title">' + element.titulo + '</h5>' +
-                    '<p class="card-text">' + element.info.substring(0, 250) + '</p>' +
+                    '<p class="card-text" style="text-align: justify">' + element.info.substring(0, 250) + '</p>' +
                     '<p class="card-text"><small class="text-muted">' + element.ano + '</small></p>' +
                     '</div>' +
                     '</div>';
