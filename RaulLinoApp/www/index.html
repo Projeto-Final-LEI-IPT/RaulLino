@@ -11,7 +11,7 @@
     <meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/leaflet.css">
-
+    <link rel="icon" href="img/logo.png">
     <title>RaulLinoApp</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -25,6 +25,9 @@
                     onclick="mudar_pagina('home')">Home</a>
             </li>
             <li class="nav-item">
+                <a style="cursor:pointer;" class="nav-link" onclick="mudar_pagina('about')">Sobre</a>
+            </li>
+            <li class="nav-item">
                 <a style="cursor:pointer;" class="nav-link" onclick="mudar_pagina('map')">Mapa</a>
             </li>
             <li class="nav-item">
@@ -33,6 +36,7 @@
             <li class="nav-item">
                 <a style="cursor:pointer;" class="nav-link" onclick="mudar_pagina('fotos')">Fotos</a>
             </li>
+
         </ul>
     </div>
     <div id="map"></div>
@@ -50,8 +54,8 @@
     </div>
 
     <div id="raullino">
-        <center><img style="width:50%; height:50%;margin-top:1%;" src="img/roteiro/raul-lino.jpg"
-                class="img-fluid" /></center>
+        <center><img style="width:50%; height:50%;margin-top:1%;" src="img/roteiro/raul-lino.jpg" class="img-fluid" />
+        </center>
         <br />
         <div style="text-align: center;" class="container">
             <h1 class="display-6">
@@ -104,18 +108,54 @@
         </div>
     </div>
     <div id="fotos" class="container"></div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
-        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
-        crossorigin="anonymous"></script>
-    <script src="cordova.js"></script>
-    <script src="js/leaflet.js"></script>
-    <script src="js/index.js"></script>
+    <div id="about" class="container">
+        <div class="container text-center">
+            <br />
+            <div class="row">
+                <div class="col">
+                    <a href="https://www.ipt.pt/"> <img src="ipt.png" class="img-fluid" alt="ipt.png" /></a>
+                    <figure>
+                        <img style="width:80%;height:80%;" src="silva.jpg" class="img-thumbnail" alt="silva.jpg">
+                        <blockquote class="blockquote">
+                            <p>João Silva</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            21282 <a href="http://istudent.ipt.pt/~jonysilv/">website</a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <a href="http://www.techneart.ipt.pt/raulino"> <img src="technart.png" class="img-fluid"
+                            alt="technart.png" /></a>
+                    <figure>
+                        <img style="width:80%;height:80%;" src="batista.jpeg" class="img-thumbnail" alt="batista.jpeg">
+                        <blockquote class="blockquote">
+                            <p>João Batista</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            21079 <a href="http://istudent.ipt.pt/~jbatista/">website</a>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <p style="text-align: left;">Este projeto foi desenvolvido no âmbito da Unidade Curricular de Projeto Final da licenciatura em Engenharia Informática, ano letivo 2021/2022, na Escola Superior de Tecnologia de Tomar do Instituto Politécnico de Tomar. Juntamente com a equipa do Tech&Art e os coordenadores do IPT. </p>
+            <p style="text-align: left;">O projeto apresentado precisava identificar, localizar, analisar, interpretar e sistematizar os projetos de arquitetura de Raul Lino que foram construídos no concelho de Abrantes, contribuindo para aprofundar o conhecimento da sua obra.</p>
+            <p style="text-align: left;">Paralelamente, pretendia-se que esse conhecimento fosse acessível ao público, através do desenvolvimento de produtos que envolvessem reduzidos efeitos nocivos ao meio ambiente, e cujo funcionamento fosse compatível com dispositivos móveis amplamente utilizados na sociedade atual, permitindo um fácil acesso à informação, a qualquer hora e em qualquer lugar.</p>
+            <img src="ipt_pred.jpg" class="img-fluid" alt="ipt_pred.jpg">
+            <br />
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+            integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+            integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+            crossorigin="anonymous"></script>
+        <script src="cordova.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/index.js"></script>
 </body>
 
 </html>

@@ -24,6 +24,7 @@ var gpsPosition, gpsSucess;
 var abrantesLat = 39.46332002046439;
 var abrantesLong = -8.199677027352164;
 var map;
+var cur_pag = "home";
 
 
 
@@ -204,6 +205,7 @@ ins_cart = (num_column) => {
 }
 
 mudar_pagina = (pagina) => {
+    cur_pag = pagina
     if (pagina == "home") {
         document.getElementById("home").style.display = "block";
         document.getElementById("map").style.opacity = 0;
@@ -211,6 +213,7 @@ mudar_pagina = (pagina) => {
         document.getElementById("raullino").style.display = "none";
         document.getElementById("pagina").style.display = "none";
         document.getElementById("fotos").style.display = "none";
+        document.getElementById("about").style.display = "none";
         ver_window();
     }
     else if (pagina == "map") {
@@ -221,6 +224,7 @@ mudar_pagina = (pagina) => {
         document.getElementById("raullino").style.display = "none";
         document.getElementById("pagina").style.display = "none";
         document.getElementById("fotos").style.display = "none";
+        document.getElementById("about").style.display = "none";
     }
     else if (pagina == "raullino") {
         document.getElementById("home").style.display = "none";
@@ -228,6 +232,7 @@ mudar_pagina = (pagina) => {
         document.getElementById("raullino").style.display = "block";
         document.getElementById("pagina").style.display = "none";
         document.getElementById("fotos").style.display = "none";
+        document.getElementById("about").style.display = "none";
     }
     else if (pagina == "pagina") {
         document.getElementById("home").style.display = "none";
@@ -235,6 +240,7 @@ mudar_pagina = (pagina) => {
         document.getElementById("raullino").style.display = "none";
         document.getElementById("pagina").style.display = "block";
         document.getElementById("fotos").style.display = "none";
+        document.getElementById("about").style.display = "none";
     }
     else if (pagina == "fotos") {
         document.getElementById("home").style.display = "none";
@@ -242,7 +248,16 @@ mudar_pagina = (pagina) => {
         document.getElementById("raullino").style.display = "none";
         document.getElementById("pagina").style.display = "none";
         document.getElementById("fotos").style.display = "block";
-        ins_cart(3)
+        document.getElementById("about").style.display = "none";
+        ins_cart(parseInt(window.innerWidth / 350) > 3 ? 3 : parseInt(window.innerWidth / 350))
+    }
+    else if (pagina == "about") {
+        document.getElementById("home").style.display = "none";
+        document.getElementById("map").style.display = "none";
+        document.getElementById("raullino").style.display = "none";
+        document.getElementById("pagina").style.display = "none";
+        document.getElementById("fotos").style.display = "none";
+        document.getElementById("about").style.display = "block";
     }
 }
 
@@ -251,6 +266,7 @@ ver_window = () => {
     var h = window.innerHeight;
     if (w >= h) document.getElementById("imagem_fundo").innerHTML = '<img style="width:' + w + 'px;height:' + h + 'px;" src="img/abrantes.jpg" class="img-fluid" />';
     else document.getElementById("imagem_fundo").innerHTML = '<img style="width:' + w + 'px;height:' + h + 'px;"src="img/abrantes2.png" class="img-fluid" />';
+    if (cur_pag == "fotos") ins_cart(parseInt(w / 350) > 3 ? 3 : parseInt(w / 350))
 }
 
 window.addEventListener('resize', ver_window);
