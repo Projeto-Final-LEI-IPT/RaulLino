@@ -17,7 +17,8 @@
     "cordova-android-support-gradle-release": "^3.0.1",
     "cordova-browser": "^6.0.0",
     "cordova-plugin-camera": "github:apache/cordova-plugin-camera",
-    "cordova-plugin-geolocation": "^4.1.0"
+    "cordova-plugin-geolocation": "^4.1.0",
+    "cordova-plugin-splashscreen": "^6.0.2"
   },
   "cordova": {
     "platforms": [
@@ -29,7 +30,8 @@
         "GPS_REQUIRED": "true"
       },
       "cordova-plugin-camera": {},
-      "cordova-android-support-gradle-release": {}
+      "cordova-android-support-gradle-release": {},
+      "cordova-plugin-splashscreen": {}
     }
   },
   "dependencies": {
