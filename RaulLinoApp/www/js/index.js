@@ -79,10 +79,10 @@ var onGPSSuccess = function (position) {
             .openPopup();
     } else {
         map = L.map('map').setView([abrantesLat, abrantesLong], 14);
-        L.marker([abrantesLat, abrantesLong]).addTo(map)
+        /*L.marker([abrantesLat, abrantesLong]).addTo(map)
             .bindPopup('<strong> Centro Abrantes</strong>')
-            .openPopup();
-    }
+            .openPopup();*/
+ }
 
     document.addEventListener("backbutton", onBackKeyDown, false);
 
@@ -103,11 +103,11 @@ var onGPSSuccess = function (position) {
     });
 
     var greenIcon = L.icon({
-        iconUrl: 'www/img/pontointeresse.svg',
+        iconUrl: 'www/img/pontointeresse.png',
 
-        iconSize: [65, 150], // size of the icon
-        iconAnchor: [40, 120], // point of the icon which will correspond to marker's location
-        popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+        iconSize: [40, 80], // size of the icon
+        iconAnchor: [20, 60], // point of the icon which will correspond to marker's location
+        popupAnchor: [-3, -50] // point from which the popup should open relative to the iconAnchor
     });
 
 
@@ -281,8 +281,9 @@ ver_window = () => {
     var w = window.innerWidth;
     var h = window.innerHeight;
     if (w >= h) document.getElementById("imagem_fundo").innerHTML = '<img style="width:' + w + 'px;height:' + h + 'px;" src="img/abrantes.jpg" class="img-fluid" />';
-    else document.getElementById("imagem_fundo").innerHTML = '<img style="width:' + w + 'px;height:' + h + 'px;"src="img/abrantes2.jpg" class="img-fluid" />';
+    else document.getElementById("imagem_fundo").innerHTML = '<img style="width:' + w + 'px;height:' + h + 'px;"src="img/abrantes2.PNG" class="img-fluid" />';
     if (cur_pag == "fotos") ins_cart(parseInt(w / 350) > 3 ? 3 : parseInt(w / 350))
 }
+
 
 window.addEventListener('resize', ver_window);
