@@ -103,7 +103,7 @@ var onGPSSuccess = function (position) {
     });
 
     var greenIcon = L.icon({
-        iconUrl: 'www/img/pontointeresse.png',
+        iconUrl: 'img/pontointeresse.png',
 
         iconSize: [40, 80], // size of the icon
         iconAnchor: [20, 60], // point of the icon which will correspond to marker's location
