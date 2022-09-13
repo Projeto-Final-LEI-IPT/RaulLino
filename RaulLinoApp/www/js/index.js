@@ -94,13 +94,29 @@ var onGPSSuccess = function (position) {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
+    var yellowIcon = L.icon({
+        iconUrl: 'www/img/centro.svg',
+
+        iconSize: [65, 150], // size of the icon
+        iconAnchor: [40, 120], // point of the icon which will correspond to marker's location
+        popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });
+
+    var greenIcon = L.icon({
+        iconUrl: 'www/img/pontointeresse.svg',
+
+        iconSize: [65, 150], // size of the icon
+        iconAnchor: [40, 120], // point of the icon which will correspond to marker's location
+        popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });
+
 
     fetch("dados.json")
         .then(response => response.json())
         .then(json => {
             var i = 0;
             json.dados.forEach(element => {
-                L.marker([element.coordenadas[0], element.coordenadas[1]]).addTo(map)
+                L.marker([element.coordenadas[0], element.coordenadas[1]], {icon: greenIcon}).addTo(map)
                     .bindPopup('<a style="cursor:pointer;" onclick="carrega_pagina(' + i + ');">' + element.titulo + '</a>');
                 i++;
             });
@@ -265,7 +281,7 @@ ver_window = () => {
     var w = window.innerWidth;
     var h = window.innerHeight;
     if (w >= h) document.getElementById("imagem_fundo").innerHTML = '<img style="width:' + w + 'px;height:' + h + 'px;" src="img/abrantes.jpg" class="img-fluid" />';
-    else document.getElementById("imagem_fundo").innerHTML = '<img style="width:' + w + 'px;height:' + h + 'px;"src="img/abrantes2.png" class="img-fluid" />';
+    else document.getElementById("imagem_fundo").innerHTML = '<img style="width:' + w + 'px;height:' + h + 'px;"src="img/abrantes2.jpg" class="img-fluid" />';
     if (cur_pag == "fotos") ins_cart(parseInt(w / 350) > 3 ? 3 : parseInt(w / 350))
 }
 
